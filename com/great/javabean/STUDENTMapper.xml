@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.great.mapper.STUDENTMapper">
+ <select id="find" resultType="com.great.javabean.STUDENT">
+ select * from STUDENT where USERNAME=#{username} and PASSWORD=#{password}
+ </select>
+ <resultMap type="com.great.javabean.STUDENT" id="STUDNET" >
+ <result property="sid" column="SID"/>
+ <result property="sname" column="SNAME"/>
+ </resultMap>
+ </mapper>

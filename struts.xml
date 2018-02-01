@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+<package name="Student" namespace="Student" extends="struts-default">  <!-- 模块 -->
+<action name="StudentLogin" class="StudentLoginAction">  <!-- 功能 -->
+<result name="success">WEB-INF/DriverSchool/main.jsp</result>  <!-- 页面放于WEB-INF/DriverSchool文件夹-->
+<result name="err">WEB-INF/DriverSchool/Login.jsp</result>
+</action>
+
+</package>
+<include file=""></include>  <!--导入文件-->
+</struts>
