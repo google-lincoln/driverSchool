@@ -11,7 +11,7 @@ Target Server Type    : ORACLE
 Target Server Version : 100200
 File Encoding         : 65001
 
-Date: 2018-02-01 20:45:52
+Date: 2018-02-01 21:12:36
 */
 
 
@@ -69,8 +69,8 @@ NOCACHE
 -- ----------------------------
 DROP TABLE "WJ1704"."COACHPUNISH";
 CREATE TABLE "WJ1704"."COACHPUNISH" (
-"TNAME" VARCHAR2(10 BYTE) NULL ,
-"PUNISH" VARCHAR2(255 BYTE) NULL 
+"TNAME" VARCHAR2(10 BYTE) NOT NULL ,
+"PUNISH" VARCHAR2(255 BYTE) NOT NULL 
 )
 LOGGING
 NOCOMPRESS
@@ -100,7 +100,7 @@ NOCACHE
 -- ----------------------------
 DROP TABLE "WJ1704"."DSAPPLY";
 CREATE TABLE "WJ1704"."DSAPPLY" (
-"DSNAME" VARCHAR2(10 BYTE) NULL ,
+"DSNAME" VARCHAR2(10 BYTE) NOT NULL ,
 "LEGALPERSON" VARCHAR2(10 BYTE) NULL ,
 "LPTELEPHONE" VARCHAR2(10 BYTE) NULL ,
 "APPLYPASSWORD" VARCHAR2(10 BYTE) NULL ,
@@ -134,7 +134,7 @@ NOCACHE
 -- ----------------------------
 DROP TABLE "WJ1704"."DSPUNISH";
 CREATE TABLE "WJ1704"."DSPUNISH" (
-"DSNAME" VARCHAR2(10 BYTE) NULL ,
+"DSNAME" VARCHAR2(10 BYTE) NOT NULL ,
 "PUNISH" VARCHAR2(255 BYTE) NULL 
 )
 LOGGING
@@ -163,7 +163,7 @@ NOCACHE
 -- ----------------------------
 DROP TABLE "WJ1704"."NEWS";
 CREATE TABLE "WJ1704"."NEWS" (
-"NTITLE" VARCHAR2(10 BYTE) NULL ,
+"NTITLE" VARCHAR2(10 BYTE) NOT NULL ,
 "NCONTEXT" VARCHAR2(10 BYTE) NULL ,
 "NDATE" DATE NULL ,
 "NSTATE" VARCHAR2(10 BYTE) NULL 
@@ -373,6 +373,15 @@ ALTER TABLE "WJ1704"."COACH" ADD CHECK ("CPASSWORD" IS NOT NULL);
 ALTER TABLE "WJ1704"."COACH" ADD PRIMARY KEY ("TID");
 
 -- ----------------------------
+-- Indexes structure for table COACHPUNISH
+-- ----------------------------
+
+-- ----------------------------
+-- Primary Key structure for table COACHPUNISH
+-- ----------------------------
+ALTER TABLE "WJ1704"."COACHPUNISH" ADD PRIMARY KEY ("TNAME", "PUNISH");
+
+-- ----------------------------
 -- Indexes structure for table DRIVERSCHOOL
 -- ----------------------------
 
@@ -387,6 +396,15 @@ ALTER TABLE "WJ1704"."DRIVERSCHOOL" ADD UNIQUE ("DSNAME");
 ALTER TABLE "WJ1704"."DRIVERSCHOOL" ADD PRIMARY KEY ("DSID");
 
 -- ----------------------------
+-- Indexes structure for table DSAPPLY
+-- ----------------------------
+
+-- ----------------------------
+-- Primary Key structure for table DSAPPLY
+-- ----------------------------
+ALTER TABLE "WJ1704"."DSAPPLY" ADD PRIMARY KEY ("DSNAME");
+
+-- ----------------------------
 -- Indexes structure for table DSASSESS
 -- ----------------------------
 
@@ -396,6 +414,15 @@ ALTER TABLE "WJ1704"."DRIVERSCHOOL" ADD PRIMARY KEY ("DSID");
 ALTER TABLE "WJ1704"."DSASSESS" ADD PRIMARY KEY ("DSNAME", "DSASSESS");
 
 -- ----------------------------
+-- Indexes structure for table DSPUNISH
+-- ----------------------------
+
+-- ----------------------------
+-- Primary Key structure for table DSPUNISH
+-- ----------------------------
+ALTER TABLE "WJ1704"."DSPUNISH" ADD PRIMARY KEY ("DSNAME");
+
+-- ----------------------------
 -- Indexes structure for table GRADUATION
 -- ----------------------------
 
@@ -403,6 +430,15 @@ ALTER TABLE "WJ1704"."DSASSESS" ADD PRIMARY KEY ("DSNAME", "DSASSESS");
 -- Primary Key structure for table GRADUATION
 -- ----------------------------
 ALTER TABLE "WJ1704"."GRADUATION" ADD PRIMARY KEY ("TNAME", "MONTH");
+
+-- ----------------------------
+-- Indexes structure for table NEWS
+-- ----------------------------
+
+-- ----------------------------
+-- Primary Key structure for table NEWS
+-- ----------------------------
+ALTER TABLE "WJ1704"."NEWS" ADD PRIMARY KEY ("NTITLE");
 
 -- ----------------------------
 -- Indexes structure for table QUESTIONS
