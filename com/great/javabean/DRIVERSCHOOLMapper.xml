@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+ <mapper namespace="com.great.mapper.DRIVERSCHOOLMapper">
+     
+ <select id="yuanguan_findDS" resultType="com.great.javabean.DRIVERSCHOOL">
+ select * from DRIVERSCHOOL
+ </select>
+    <insert id="yuanguan_insert" parameterType="com.great.javabean.DRIVERSCHOOL">
+		insert into
+		DRIVERSCHOOL(DSID,DSNAME,DSBELONGNAME,DSBELONGPHONE,DSSTATE) values(DS_ID.nextval,#{dsname},#{dsbelongname},#{dsbelongphone},#{dsstate})
+	</insert>
+ </mapper>

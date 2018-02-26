@@ -3,7 +3,7 @@
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
  <mapper namespace="com.great.mapper.STUDENTMapper">
  <select id="find" resultType="com.great.javabean.STUDENT">
- select * from STUDENT where USERNAME=#{username} and PASSWORD=#{password}
+ select * from STUDENT
  </select>
  <resultMap type="com.great.javabean.STUDENT" id="STUDNET" >
  <result property="sid" column="SID"/>

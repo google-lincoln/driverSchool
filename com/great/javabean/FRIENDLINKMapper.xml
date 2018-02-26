@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.great.mapper.FRIENDLINKMapper">
+ <resultMap type="com.great.javabean.FRIENDLINK" id="resultMap">
+ <result property="fname" column="FNAME"/>
+ <result property="web" column="WEB"/>
+ <result property="status" column="STATUS"/>
+ </resultMap>
+ <insert id="insert" parameterType="com.great.javabean.FRIENDLINK">
+     insert into FRIENDLINK
+     values(#{web},#{fname},#{status}) 
+ </insert>
+ <select id="findAll" resultType="com.great.javabean.FRIENDLINK">
+     select * from FRIENDLINK
+ </select>
+ </mapper>

@@ -7,12 +7,11 @@ public class STUDENT {
 	private int sid;
 	private String sname;
 	private int sphone;//学员联系电话
-    private Date date;//注册时间
-    private String cname;//所属教练名
+    private Date sdate;//注册时间
+    private String tname;//所属教练名
     private String dsname;//所属驾校名
     private String username;
     private String password;
-    
     
 	public int getSid() {
 		return sid;
@@ -32,18 +31,6 @@ public class STUDENT {
 	public void setSphone(int sphone) {
 		this.sphone = sphone;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	public String getCname() {
-		return cname;
-	}
-	public void setCname(String cname) {
-		this.cname = cname;
-	}
 	public String getDsname() {
 		return dsname;
 	}
@@ -61,6 +48,18 @@ public class STUDENT {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Date getSdate() {
+		return sdate;
+	}
+	public void setSdate(Date sdate) {
+		this.sdate = sdate;
+	}
+	public String getTname() {
+		return tname;
+	}
+	public void setTname(String tname) {
+		this.tname = tname;
 	}
     
 	

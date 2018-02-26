@@ -1,14 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
     "http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <struts>
-<package name="Student" namespace="Student" extends="struts-default">  <!-- 模块 -->
-<action name="StudentLogin" class="StudentLoginAction">  <!-- 功能 -->
-<result name="success">WEB-INF/DriverSchool/main.jsp</result>  <!-- 页面放于WEB-INF/DriverSchool文件夹-->
-<result name="err">WEB-INF/DriverSchool/Login.jsp</result>
-</action>
 
+<package name="manager" namespace="/manager" extends="struts-default">  
+<action name="login" class="com.great.action.LoginAction">
+    <result name="success">/WEB-INF/Manager-jsp/Login.jsp</result>
+    <result name="err">/WEB-INF/Manager-jsp/Login.jsp</result>
+</action>
+<action name="tologin" class="com.great.action.ToLoginAction">
+    <result name="success" type="chain">allnews</result>
+    <result name="err">/WEB-INF/Manager-jsp/Login.jsp</result>
+</action>
+<action name="allnews" class="com.great.action.NewsAction">  
+     <result name="success">/WEB-INF/Manager-jsp/News.jsp</result>  
+     <result name="err">/WEB-INF/Manager-jsp/News.jsp</result>
+</action>
+<action name="insertnews" class="com.great.action.AddNewsAction">
+     <result name="success">/WEB-INF/Manager-jsp/News.jsp</result>
+     <result name="err">/WEB-INF/Manager-jsp/News.jsp</result>
+</action>
+<action name="alllink" class="com.great.action.FriendLinkAction">
+    <result name="success">/WEB-INF/Manager-jsp/Link.jsp</result>
+    <result name="err">/WEB-INF/Manager-jsp/Link.jsp</result>
+</action>
+<action name="insertweb" class="com.great.action.AddFriendLinkAction">
+    <result name="success">/WEB-INF/Manager-jsp/Link.hsp</result>
+    <result name="err">/WEB-INF/Manager-jsp/Link.jsp</result>
+</action>
 </package>
-<include file=""></include>  <!--导入文件-->
+<include file="struts-yunguan.xml"></include>
+<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" /> 
 </struts>

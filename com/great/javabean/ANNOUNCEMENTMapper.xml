@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.great.mapper.ANNOUNCEMENTMapper">
+
+      <insert id="addAnnounce" parameterType="com.great.javabean.ANNOUNCEMENT">
+		insert into
+		ANNOUNCEMENT(atitle,acontext,adate,astate) values(#{atitle},#{acontext},#{adate},#{astate})
+	</insert>
+     <select id="findA" resultType="com.great.javabean.ANNOUNCEMENT">
+		select * from
+		ANNOUNCEMENT
+	</select>
+	<delete id="deleteA" parameterType="String">
+		delete from ANNOUNCEMENT where
+		ATITLE=#{deletetitle}
+    </delete>   
+     <update id="updateA" parameterType="com.great.javabean.ANNOUNCEMENT">
+	<!-- update ANNOUNCEMENT atitle=#{atitle} and acontext=#{acontext} where atitle=#{astate} -->
+	update ANNOUNCEMENT set ATITLE=#{atitle},ACONTEXT=#{acontext} where ATITLE=#{astate}
+	</update>
+ 
+     
+ </mapper>

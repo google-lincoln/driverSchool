@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.great.mapper.DSAPPLYMapper">
+
+     <select id="finddsapply" resultType="com.great.javabean.DSAPPLY">
+		select * from
+		DSAPPLY where APPLYREMARK='已审核'
+	</select>
+	<select id="finddsapply2" resultType="com.great.javabean.DSAPPLY">
+		select * from
+		DSAPPLY where APPLYREMARK='待审核'
+	</select>
+	 <update id="updateapply" parameterType="com.great.javabean.DSAPPLY">
+	<!-- update ANNOUNCEMENT atitle=#{atitle} and acontext=#{acontext} where atitle=#{astate} -->
+	update DSAPPLY set REVIEWEDDATE=#{revieweddate},APPLYREMARK=#{applyremark},APPLYRESULT=#{applyresult} where dsname=#{dsname}
+	</update>
+
+     
+ </mapper>

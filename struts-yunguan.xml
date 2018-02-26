@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+<package name="student" namespace="/student" extends="struts-default">  
+<action name="studentlogin" class="studentLoginAction">  
+  <result name="success">/WEB-INF/driverschool/main.jsp</result>  
+  <result name="err">/WEB-INF/driverschool/Login.jsp</result>
+</action>
+
+</package>
+
+
+<package name="yunguan" namespace="/yunguan" extends="struts-default"> 
+<action name="y" class="yunGuanAction" method="y">  
+     <result name="success">/WEB-INF/YunGuan_jsp/index.jsp</result>  
+</action>    
+<action name="announcement" class="yunGuanAction" method="post">  
+     <result name="success" type="redirectAction">
+	 			<param name="actionName">announcement2</param>
+	 			<param name="method">announcementlist</param>
+	  </result>  
+</action>
+<action name="announcement2" class="yunGuanAction" method="announcementlist">  
+    <!-- /DriverSchool/WebContent/ -->
+     <result name="success">/WEB-INF/YunGuan_jsp/announcement.jsp</result>  
+</action>
+<action name="dslist" class="yunGuanAction" method="DSlist">  
+     <result name="success">/WEB-INF/YunGuan_jsp/punish.jsp</result>  
+</action>
+<action name="dslist2" class="yunGuanAction" method="DSlist2">  
+     <result name="success">/WEB-INF/YunGuan_jsp/school.jsp</result>  
+</action>
+<action name="punish" class="yunGuanAction" method="punish">  
+     <result name="success">/WEB-INF/YunGuan_jsp/punish.jsp</result>  
+</action>
+<action name="deleteA" class="yunGuanAction" method="deleteA">  
+      <result name="success" type="redirectAction">
+	 			<param name="actionName">announcement2</param>
+	 			<param name="method">announcementlist</param>
+	  </result>  
+</action>
+<action name="updateA" class="yunGuanAction" method="updateA">  
+      <result name="success" type="redirectAction">
+	 			<param name="actionName">announcement2</param>
+	 			<param name="method">announcementlist</param>
+	  </result>  
+</action>
+<action name="readA" class="yunGuanAction" method="readA">  
+      <result name="success" type="redirectAction">
+	 			<param name="actionName">announcement2</param>
+	 			<param name="method">announcementlist</param>
+	  </result>  
+</action>
+<action name="applylist" class="yunGuanAction" method="applylist">  
+       <result name="success">/WEB-INF/YunGuan_jsp/apply.jsp</result> 
+</action>
+<action name="passapply" class="yunGuanAction" method="passapply">  
+      <result name="success" type="redirectAction">
+	 			<param name="actionName">applylist</param>
+	 			<param name="method">applylist</param>
+	  </result>  
+</action>
+<action name="refuseapply" class="yunGuanAction" method="refuseapply">  
+        <result name="success" type="redirectAction">
+	 			<param name="actionName">applylist</param>
+	 			<param name="method">applylist</param>
+	  </result>  
+</action>
+<action name="carlist" class="yunGuanAction2" method="carlist">  
+     <result name="success">/WEB-INF/YunGuan_jsp/car.jsp</result>  
+</action>
+<action name="coachlist" class="yunGuanAction2" method="coachlist">  
+     <result name="success">/WEB-INF/YunGuan_jsp/coach.jsp</result>  
+</action>
+<action name="studentlist" class="yunGuanAction2" method="studentlist">  
+     <result name="success">/WEB-INF/YunGuan_jsp/student.jsp</result>  
+</action>
+</package>
+
+
+
+</struts>

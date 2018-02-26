@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.great.mapper.NEWSMapper">
+ <resultMap type="com.great.javabean.NEWS" id="resultMap">
+ <result property="ntitle" column="NTITLE"/>
+ <result property="ncontext" column="NCONTEXT"/>
+ <result property="ndate" column="NDATE"/>
+ <result property="nstate" column="NSTATE"/>
+ </resultMap>
+ <insert id="insert" parameterType="com.great.javabean.NEWS">
+     insert into NEWS 
+     values(#{ntitle},#{ncontext},#{ndate},#{nstate}) 
+ </insert>
+ <select id="findAll" resultType="com.great.javabean.NEWS">
+     select * from NEWS
+ </select>
+ <select id="find" parameterType="java.lang.String" resultType="com.great.javabean.NEWS">
+     select * from NEWS where ntitle = #{ntitle}
+ </select>
+ </mapper>

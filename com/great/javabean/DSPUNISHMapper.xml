@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.great.mapper.DSPUNISHMapper">
+
+      <insert id="addDspunish" parameterType="com.great.javabean.DSPUNISH">
+		insert into
+		DSPUNISH(dsname,punishtype,punishresult,punishreason,punishdate) values(#{dsname},#{punishtype},#{punishresult},#{punishreason},#{punishdate})
+	</insert>
+
+ 
+     
+ </mapper>
